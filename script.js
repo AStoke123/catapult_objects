@@ -15,16 +15,19 @@ let cats = [{
   image_url: "https://i.pinimg.com/564x/cd/cf/c6/cdcfc6a44fa8ac71072e9756abea5522.jpg",
   age: 29,
   name: "Rockstar Cat"
+},
+{
+  image_url: "https://upload.wikimedia.org/wikipedia/en/f/f6/Tom_Tom_and_Jerry.png",
+  age: 22,
+  name: "Tom"
 }
 ];
 
-
-// This code is LAME and does not fit the cool
-// cat aesthetic. Rewrite it to use a for each
-// loop to render our cool cats to the DOM
-let newCat = document.createElement('div');
-newCat.innerHTML = renderCat(cats[0]);
-catDiv.appendChild(newCat);
+cats.forEach(function (cat) {
+  let newCat = document.createElement('div');
+  newCat.innerHTML = renderCat(cat);
+  catDiv.appendChild(newCat);
+});
 
 function renderCat(cat) {
   return `
